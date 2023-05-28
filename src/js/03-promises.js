@@ -31,7 +31,7 @@ function onSubmitForm(event) {
 
   for (let i = 0; i < amount; i++) {
     let position = i + 1;
-    console.log(delay);
+
     createPromise(position, delay)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
@@ -45,4 +45,7 @@ function onSubmitForm(event) {
       });
     delay += step;
   }
+  refs.delayInp.value = '';
+  refs.stepInp.value = '';
+  refs.amountInp.value = '';
 }
